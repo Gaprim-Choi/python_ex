@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 df1 = pd.DataFrame({'Class1': [95, 92, 98, 100],
  'Class2': [91, 93, 97, 99]})
 print(df1)
@@ -22,42 +21,6 @@ print(df4)
 print(df1.join(df4))
 '''
  Class1 Class2 Class3
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
 0 95 91 93
 1 92 93 91
 2 98 97 95
