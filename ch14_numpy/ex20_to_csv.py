@@ -46,5 +46,5 @@ P1002 3000 53
 P1003 5000 40
 P1004 10000 25
 '''
-""" file_name = 'D:\dev\workspace\python\ch14_numpy\save_DataFrame_utf-8.txt'
-df_pr.to_csv(file_name, sep=" ", encoding="utf-8") """
+file_name = './ch14_numpy/save_DataFrame_utf-8.txt'
+df_pr.to_csv(file_name, sep=" ", encoding="utf-8")
