@@ -9,6 +9,7 @@ plt.title('Height & Weight')
 plt.grid(True)
 plt.scatter(height, weight, s=500, c='r') # 마커 크기는 500, 컬러는 붉은색(red)
 plt.show()
+
 size = 100 * np.arange(1, 8) # 데이터별로 마커의 크기 지정
 colors = ['r', 'g', 'b', 'c', 'm', 'k', 'y'] # 데이터별로 마커의 컬러 지정
 plt.scatter(height, weight, s=size, c=colors)
