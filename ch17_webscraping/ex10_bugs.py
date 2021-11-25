@@ -124,7 +124,7 @@ def bugs_music_week_top100(year, month, day):
 
 
 # 날짜를 지정해 bugs_music_week_top100() 함수 호출
-bugs_music_titles, bugs_music_artists = bugs_music_week_top100(2020, 9, 21)
+bugs_music_titles, bugs_music_artists = bugs_music_week_top100(2021, 11, 25)
 
 # 곡명과 아티스트를 저장할 파일 이름을 폴더와 함께 지정
 file_name = './ch17_webscraping/bugs_week_top100.txt'
