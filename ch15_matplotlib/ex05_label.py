@@ -40,3 +40,11 @@ plt.ylabel('Y 축')
 plt.title('그래프 제목')
 plt.grid(True)
 plt.show()
+
+
+plt.plot(x, y1, '>--r', x, y2, 's-g', x, y3, 'd:b', x, y4, '-.Xc')
+plt.text(0,6, "문자열 출력1")
+plt.text(0,5, "문자열 출력2")
+plt.text(3,1, "문자열 출력3")
+plt.text(3,0, "문자열 출력4")
+plt.show()
