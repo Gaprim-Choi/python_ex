@@ -32,6 +32,7 @@ plt.legend(['data1', 'data2', 'data3', 'data4'], loc='lower right')
 plt.show() """
 matplotlib.rcParams['font.family'] = 'Malgun Gothic' # '맑은 고딕'으로 설정
 matplotlib.rcParams['axes.unicode_minus'] = False
+
 plt.plot(x, y1, '>--r', x, y2, 's-g', x, y3, 'd:b', x, y4, '-.Xc')
 plt.legend(['데이터1', '데이터2', '데이터3', '데이터4'], loc='best')
 plt.xlabel('X 축')
