@@ -5,7 +5,7 @@ data_file = "./ch19_project/missing_data_test.csv"
 
 df = pd.read_csv(data_file, encoding="cp949", index_col="연도")
 
-print(df)
+#print(df)
 '''
         제품1  제품2    제품3    제품4
 연도
@@ -16,7 +16,7 @@ print(df)
 2019    NaN  250  140.0    NaN
 '''
 
-print(df.isnull())
+#print(df.isnull())
 '''
         제품1    제품2    제품3    제품4
 연도
@@ -27,7 +27,7 @@ print(df.isnull())
 2019   True  False  False   True
 '''
 
-print(df.isnull().sum())
+#print(df.isnull().sum())
 '''
 제품1    1
 제품2    0
@@ -38,7 +38,7 @@ dtype: int64
 
 
 # 결측치 처리
-print(df.drop(index=[2019]))
+#print(df.drop(index=[2019]))
 '''
         제품1  제품2    제품3    제품4
 연도
@@ -48,7 +48,7 @@ print(df.drop(index=[2019]))
 2018  120.0  230  130.0  170.0
 '''
 
-print(df.drop(columns=['제품3', '제품4']))
+#print(df.drop(columns=['제품3', '제품4']))
 '''
         제품1  제품2
 연도
@@ -59,7 +59,7 @@ print(df.drop(columns=['제품3', '제품4']))
 2019    NaN  250
 '''
 
-print(df.drop(index=[2019], columns=['제품3', '제품4']))
+#print(df.drop(index=[2019], columns=['제품3', '제품4']))
 '''
         제품1  제품2
 연도
@@ -69,7 +69,7 @@ print(df.drop(index=[2019], columns=['제품3', '제품4']))
 '''
 
 
-print(df.dropna())  # df.dropna(axis=0)도 결과는 같습니다.
+#print(df.dropna())  # df.dropna(axis=0)도 결과는 같습니다.
 '''
         제품1  제품2    제품3    제품4
 연도
@@ -77,7 +77,7 @@ print(df.dropna())  # df.dropna(axis=0)도 결과는 같습니다.
 2018  120.0  230  130.0  170.0
 '''
 
-print(df.dropna(axis=0, subset=['제품1']))
+print(df.dropna(axis=1, subset=[2015]))
 '''
         제품1  제품2    제품3    제품4
 연도
@@ -98,7 +98,7 @@ print(df.dropna(axis=1))
 2019  250
 '''
 
-print(df.fillna(0))
+print(df.fillna(11))
 '''
         제품1  제품2    제품3    제품4
 연도
