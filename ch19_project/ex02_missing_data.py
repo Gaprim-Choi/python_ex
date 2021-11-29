@@ -59,7 +59,7 @@ print(df.drop(columns=['제품3', '제품4']))
 2019    NaN  250
 '''
 
-print(df.drop(index=[2018, 2019], columns=['제품3', '제품4']))
+print(df.drop(index=[2019], columns=['제품3', '제품4']))
 '''
         제품1  제품2
 연도
