@@ -11,7 +11,6 @@ jj = jj.replace('A', 3)
 jj = jj.replace('B', 2)
 jj = jj.replace('C', 1)
 jj = jj.drop(['문항'],axis=1)
-print(jj)
 
 # 직업 만족도에 대한 각 항목에 대한 데이터값 연산 전 정리
 jm = jm.replace('A', 3)

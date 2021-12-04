@@ -17,6 +17,7 @@ df = pd.DataFrame({
 'Energy': [4, 4],
 'Wisdom': [2, 6]
 })
+print(len(df.index))
 
 ## 하나로 합치기 - 폴리곤
 labels = df.columns[1:]
@@ -30,10 +31,13 @@ my_palette = plt.cm.get_cmap("Set2", len(df.index))
 fig = plt.figure(figsize=(8,8))
 fig.set_facecolor('white')
 ax = fig.add_subplot(polar=True)
+print(df)
 for i, row in df.iterrows():
     color = my_palette(i)
     data = df.iloc[i].drop('Character').tolist()
+    print(df.iloc[i].drop('Character').tolist())
     data += data[:1]
+    print(data)
     
     ax.set_theta_offset(pi / 2) ## 시작점
     ax.set_theta_direction(-1) ## 그려지는 방향 시계방향
