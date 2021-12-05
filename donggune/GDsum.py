@@ -1,5 +1,6 @@
 import matplotlib
 import matplotlib.pyplot as plt
+from numpy.core.numeric import NaN
 import pandas as pd
 import numpy as np
  
@@ -42,43 +43,39 @@ matplotlib.rcParams['axes.unicode_minus'] = False
 
 
 """ --------------------전체 질문자에 대한 그래프 생성---------------------- """
-
-print(total.iloc)
-
-
-labels = total.columns[:]
-print(labels)
-num_labels = len(labels)
+for i, j in total.iterrows():
+    labels = total.columns[:]
+    num_labels = len(labels)
     
-angles = [x/float(num_labels)*(2*pi) for x in range(num_labels)] ## 각 등분점
-angles += angles[:1] ## 시작점으로 다시 돌아와야하므로 시작점 추가
-print(angles)
+    angles = [x/float(num_labels)*(2*pi) for x in range(num_labels)] ## 각 등분점
+    angles += angles[:1] ## 시작점으로 다시 돌아와야하므로 시작점 추가
+    print(angles)
     
-my_palette = plt.cm.get_cmap("Set2", len(total.index))
+    my_palette = plt.cm.get_cmap("Set2", len(total.index))
  
-fig = plt.figure(figsize=(8,8))
-fig.set_facecolor('white')
-ax = fig.add_subplot(polar=True)
-
-for i, row in total.iterrows():
+    fig = plt.figure(figsize=(8,8))
+    fig.set_facecolor('white')
+    ax = fig.add_subplot(polar=True)
     color = 'green'
     print(i)
     data = total.iloc[i-1].tolist()
     data += data[:1]
-    print(data) 
-
-    ax.set_theta_offset(pi / 2) ## 시작점
-    ax.set_theta_direction(-1) ## 그려지는 방향 시계방향
-
-    plt.xticks(angles[:-1], labels, fontsize=13) ## 각도 축 눈금 라벨
-    ax.tick_params(axis='x', which='major', pad=15) ## 각 축과 눈금 사이에 여백을 준다.
-
-    ax.set_rlabel_position(0) ## 반지름 축 눈금 라벨 각도 설정(degree 단위)
-    plt.yticks([0,8,17,26,34],['0','8','17','26','34'], fontsize=10) ## 반지름 축 눈금 설정
-    plt.ylim(0,34)
-
-    ax.plot(angles, data, color=color, linewidth=2, linestyle='solid', label='검사자 기록') ## 레이더 차트 출력
-    ax.fill(angles, data, color=color, alpha=0.4) ## 도형 안쪽에 색을 채워준다.
-    plt.legend(loc=(0.9,0.9))
-    plt.show()
+    print (data)
     
+    if data != NaN:
+        ax.set_theta_offset(pi / 2) ## 시작점
+        ax.set_theta_direction(-1) ## 그려지는 방향 시계방향
+
+        plt.xticks(angles[:-1], labels, fontsize=13) ## 각도 축 눈금 라벨
+        ax.tick_params(axis='x', which='major', pad=15) ## 각 축과 눈금 사이에 여백을 준다.
+
+
+        ax.set_rlabel_position(0) ## 반지름 축 눈금 라벨 각도 설정(degree 단위)
+        plt.yticks([0,8,17,26,34],['0','8','17','26','34'], fontsize=10) ## 반지름 축 눈금 설정
+        plt.ylim(0,34)
+
+        ax.plot(angles, data, color=color, linewidth=2, linestyle='solid', label='검사자 기록') ## 레이더 차트 출력
+        ax.fill(angles, data, color=color, alpha=0.4) ## 도형 안쪽에 색을 채워준다.
+        print(angles)
+        print(ax)
+plt.show()

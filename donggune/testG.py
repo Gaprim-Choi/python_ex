@@ -51,7 +51,7 @@ for i, row in df.iterrows():
     ax.plot(angles, data, color=color, linewidth=2, linestyle='solid', label=row.Character) ## 레이더 차트 출력
     ax.fill(angles, data, color=color, alpha=0.4) ## 도형 안쪽에 색을 채워준다.
     
-for g in ax.yaxis.get_gridlines(): ## grid line 
+""" for g in ax.yaxis.get_gridlines(): ## grid line 
     g.get_path()._interpolation_steps = len(labels)
  
 spine = Spine(axes=ax,
@@ -59,9 +59,9 @@ spine = Spine(axes=ax,
           path=Path.unit_regular_polygon(len(labels)))
  
 ## Axes의 중심과 반지름을 맞춰준다.
-spine.set_transform(Affine2D().scale(.5).translate(.5, .5)+ax.transAxes)
+spine.set_transform(Affine2D().scale(.5).translate(.5, .5)+ax.transAxes) """
            
-ax.spines = {'polar':spine} ## frame의 모양을 원에서 폴리곤으로 바꿔줘야한다.
+""" ax.spines = {'polar':spine} ## frame의 모양을 원에서 폴리곤으로 바꿔줘야한다. """
 matplotlib.rcParams['font.family'] = 'Malgun Gothic'  # '맑은 고딕'으로 설정
 matplotlib.rcParams['axes.unicode_minus'] = False 
 plt.legend(loc=(0.9,0.9))
